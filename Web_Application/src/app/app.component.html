@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:left;width:500px;">
+  <h1>
+      {{ title }}!
+  </h1>
+
+  <table *ngIf="array" class="table">
+      <!-- ADD HEADERS -->
+      <thead>
+      <tr>
+          <th scope="col">Nom du projet</th>
+              <th scope="col">Description du projet</th>
+                    <th scope="col">Forks</th>
+                        <th scope="col">Stars</th>
+                    
+      </tr>
+      </thead>
+      <tbody>
+      <!-- BIND ARRAY TO TABLE -->
+      <tr *ngFor="let project of array">
+          <th scope="row"><a href="{{project.LINK}}">{{project.NAME}}</a></th>
+              <td>{{project.DESCRIPTION}}</td>
+                      <td>{{project.FORKS}}</td>
+                          <td>{{project.STARS}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<router-outlet></router-outlet>
