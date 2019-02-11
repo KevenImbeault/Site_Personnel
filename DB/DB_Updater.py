@@ -34,10 +34,12 @@ def job():
         if data==0:
             params = (repo[0], repo[1], repo[2], repo[3], repo[4])
             cursor.execute("INSERT INTO GITHUB (NAME, DESCRIPTION, LINK, FORKS, STARS) VALUES (?, ?, ?, ?, ?)", params)
+            print("Created an entry for the repo : " + repo[0])
         #If the repo is already in the GITHUB table, update it.
         else:
             params = (repo[1], repo[2], repo[3], repo[4], repo[0])
             cursor.execute("UPDATE GITHUB set DESCRIPTION = ?, LINK = ?, FORKS = ?, STARS = ? where NAME = ?", params)
+            print("Updated the entry for the repo : " + repo[0])
 
     #Get the names of the repos inside the GITHUB table and puts them in a list .   
     query = cursor.execute('SELECT NAME FROM GITHUB')
