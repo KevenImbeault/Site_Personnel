@@ -24,6 +24,7 @@ def job():
             Repo_Info = [repo.name, "TODO", repo.html_url, str(repo.forks_count), str(repo.stargazers_count)]
         else:
             Repo_Info = [repo.name, repo.description, repo.html_url, str(repo.forks_count), str(repo.stargazers_count)]
+        Repos.append(Repo_Info)
 
     for repo in Repos:
         Repos_Names.append(repo[0])
