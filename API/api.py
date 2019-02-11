@@ -4,7 +4,7 @@ from flask_cors import CORS
 from sqlalchemy import create_engine
 from json import dumps
 
-e = create_engine('sqlite:///c:/sqlite/web.db')
+e = create_engine('sqlite:///../DB/web.db')
 
 app = Flask(__name__)
 CORS(app)

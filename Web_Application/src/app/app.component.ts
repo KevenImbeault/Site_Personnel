@@ -13,7 +13,7 @@ export class AppComponent {
   array: string [];
 
   ngOnInit() {
-    this.httpService.get('http://127.0.0.1:5000/api/github').subscribe(
+    this.httpService.get('http://localhost:5000/api/github').subscribe(
       data => {
         this.array = data as string [];
       },
