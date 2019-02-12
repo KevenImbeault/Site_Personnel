@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+  selector: 'app-github-projects',
+  templateUrl: './github-projects.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Projets';
+export class AppGithubProjects {
+  title = 'Développement logiciel';
 
   model = {
     left: true,
@@ -28,7 +28,5 @@ export class AppComponent {
       }
     );
   }
-
-
 
 }

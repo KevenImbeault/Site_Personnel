@@ -6,7 +6,7 @@ import time
 conn = sqlite3.connect('web.db')
 print("Script started !")
 
-
+#TODO Encrypt this key
 git = Github("fb3025d2855730d6b8d29ff75d0dbefa35f0d99c")
 
 
