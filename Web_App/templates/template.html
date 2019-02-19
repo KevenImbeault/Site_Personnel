@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Flask Parent Template</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+ <body>
+    
+    <nav class="navbar bg-light fixed-top navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Keven Imbeault</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a id="developpement-logiciel" class="nav-link" href="{{ url_for('software') }}">Développement logiciel</a>
+            </li>
+          </ul>
+        </div>
+    
+    </nav>
+    {% block content %}    
+    {% endblock %}
+    <div class="Paneau_Fonce_Complet text-center">
+      <div class="icones">
+          <a href="https://twitter.com/KevenImbeault" class="twitter"><i class="fab fa-twitter-square fa-3x"></i></a>
+          <a href="https://www.instagram.com/kevenimbeault/" class="instagram"><i class="fab fa-instagram fa-3x"></i></a>
+          <a href="https://www.linkedin.com/in/keven-imbeault-180665111" class="linkedin"><i class="fab fa-linkedin fa-3x"></i></a>
+          <a href=" https://github.com/KevenImbeault" class="github"><i class="fab fa-github-square fa-3x"></i></a>
+          <a href="https://www.facebook.com/imbeault.keven" class="facebook"><i class="fab fa-facebook-square fa-3x"></i></a>
+          <a href="mailto:contact@kevenimbeault.ca" class="mail"><i class="fas fa-envelope-square fa-3x"></i></a>
+      </div>
+  
+      <div>
+          <p class="ligne"></p>
+          <p>Pour me contacter : imbeault.keven@gmail.com</p>
+      </div>
+  </div>
+ </body>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="/javascripts/menu.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131131034-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-131131034-1');
+</script>
+</html>

@@ -24,7 +24,7 @@ def __init__(self, NAME, DESCRIPTION, LINK, FORKS, STARS):
 
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home.html", page = 'Acceuil')
 
 @app.route('/developpement-logiciel')
 def software():
