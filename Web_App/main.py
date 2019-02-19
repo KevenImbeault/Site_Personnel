@@ -1,27 +1,35 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_restful import Resource, Api
 from flask_cors import CORS
-from sqlalchemy import create_engine
+from flask_sqlalchemy import SQLAlchemy
 from json import dumps
 
-e = create_engine('sqlite:///../DB/web.db')
-
 app = Flask(__name__)
-CORS(app)
-api = Api(app)
+app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///../DB/web.db'
 
+db = SQLAlchemy(app)
+class GITHUB(db.Model):
+    NAME = db.Column('NAME', db.TEXT, primary_key = True)
+    DESCRIPTION = db.Column(db.TEXT)
+    LINK = db.Column(db.TEXT)
+    FORKS = db.Column(db.INT)
+    STARS = db.Column(db.INT)
 
-class Github_Repos(Resource):
-    def get(self):
-        #Connect to database
-        conn = e.connect()
-        query = conn.execute ("select * from GITHUB")
-        result = [dict(zip(tuple(query.keys()) ,i)) for i in query.cursor]
-        return result
+def __init__(self, NAME, DESCRIPTION, LINK, FORKS, STARS):
+    self.NAME = NAME
+    self.DESCRIPTION = DESCRIPTION
+    self.LINK = LINK
+    self.FORKS = FORKS
+    self.STARS = STARS
 
-api.add_resource(Github_Repos, '/api/github')
-    
+@app.route('/')
+def home():
+    return render_template("home.html")
+
+@app.route('/developpement-logiciel')
+def software():
+    return render_template("software.html", repos = GITHUB.query.all(), page = 'Développement logiciel')
 
 if __name__ == '__main__':
-    app.run(host='localhost')
+    app.run(debug=True)
 
