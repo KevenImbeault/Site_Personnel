@@ -22,7 +22,6 @@ def job():
 
     #Gets public repos of the user and replaces empty descriptions with "TODO".
     for repo in git.get_user().get_repos():
-        print(repo.language)
         if repo.description == None:
             Repo_Info = [repo.name, "TODO", repo.html_url, str(repo.forks_count), str(repo.stargazers_count), repo.updated_at.strftime('%Y-%m-%d'), repo.language]
         else:
