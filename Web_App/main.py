@@ -9,10 +9,10 @@ from json import dumps
 import time
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
-from DB_Updater import job
+from DB_Updater import Update_Database
     
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=job, trigger="interval", hours=1)
+scheduler.add_job(func=Update_Database, trigger="interval", hours=1)
 scheduler.start()
 
 atexit.register(lambda: scheduler.shutdown())

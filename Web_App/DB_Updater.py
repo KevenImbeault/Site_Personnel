@@ -1,14 +1,12 @@
 import sqlite3
 from github import Github
 
-def job():
+def Update_Database():
     
     conn = sqlite3.connect('../DB/web.db')
     print("Script started !")
 
     f = open('Github_Key.txt', 'r')
-
-    #TODO Encrypt this key
     git = Github(f.readline())
 
     #Initialisation of various variables.
@@ -55,5 +53,6 @@ def job():
             cursor.execute("DELETE FROM GITHUB WHERE NAME=?", (name,))
             print('Repo ' + name + ' deleted')
 
+    #Commit the changes and print "Done !"
     conn.commit()   
     print("Done !") 
