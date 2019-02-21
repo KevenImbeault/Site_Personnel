@@ -1,3 +1,8 @@
+# Author : Keven Imbeault
+# Creation date :
+# Last update : 21/02/2019
+# Description : Main code for the website app
+
 #Imports for Flask server
 from flask import Flask, request, render_template
 from flask_restful import Resource, Api
@@ -22,13 +27,12 @@ scheduler.start()
 #Shutdown background task on exit of app
 atexit.register(lambda: scheduler.shutdown())
 
-
 #Laucnhing Flask app
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///web.db'
-
-
 db = SQLAlchemy(app)
+
+#Creates a model for the GITHUB table in the database
 class GITHUB(db.Model):
     NAME = db.Column('NAME', db.TEXT, primary_key = True)
     DESCRIPTION = db.Column(db.TEXT)
@@ -47,6 +51,8 @@ def __init__(self, NAME, DESCRIPTION, LINK, FORKS, STARS):
     self.UPDATED_AT = UPDATED_AT
     self.LANGUAGE = LANGUAGE
 
+# "page" variable passed during render_template function is for the name in the title bar
+
 @app.route('/')
 def home():
     return render_template("home.html", page = 'Acceuil')
@@ -57,5 +63,4 @@ def software():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
-    
     #app.run(debug=True)

@@ -1,3 +1,8 @@
+# Author : Keven Imbeault
+# Creation date :
+# Last update : 21/02/2019
+# Description : Code for updating the database
+
 import sqlite3
 from github import Github
 
