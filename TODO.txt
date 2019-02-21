@@ -14,4 +14,5 @@
 * W E B   A P P L I C A T I O N *
 * * * * * * * * * * * * * * * * *
 
-+ Modify CSS to make sure everything is Responsive
++ Modify home text for a more fitting description
++ Implement ButterCMS as a blog or RSS parse medium feed https://medium.com/feed/@KevenImbeault
