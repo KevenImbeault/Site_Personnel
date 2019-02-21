@@ -28,8 +28,8 @@ class GITHUB(db.Model):
     NAME = db.Column('NAME', db.TEXT, primary_key = True)
     DESCRIPTION = db.Column(db.TEXT)
     LINK = db.Column(db.TEXT)
-    FORKS = db.Column(db.NUMBER(3))
-    STARS = db.Column(db.NUMBER(3))
+    FORKS = db.Column(db.INT)
+    STARS = db.Column(db.INT)
     UPDATED_AT = db.Column(db.DATE)
     LANGUAGE = db.Column(db.VARCHAR(20))
 
