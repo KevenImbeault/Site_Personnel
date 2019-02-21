@@ -3,7 +3,7 @@ from github import Github
 
 def Update_Database():
     
-    conn = sqlite3.connect('../DB/web.db')
+    conn = sqlite3.connect('web.db')
     print("Script started !")
 
     f = open('Github_Key.txt', 'r')

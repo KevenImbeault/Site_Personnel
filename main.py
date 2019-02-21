@@ -20,7 +20,7 @@ atexit.register(lambda: scheduler.shutdown())
 
 #Laucnhing Flask app
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///../DB/web.db'
+app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///web.db'
 
 
 db = SQLAlchemy(app)
@@ -51,5 +51,5 @@ def software():
     return render_template("software.html", repos = GITHUB.query.all(), page = 'Développement logiciel')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
 
