@@ -1,18 +1,16 @@
 import sqlite3
 from github import Github
-import schedule
-import time
-
-conn = sqlite3.connect('web.db')
-print("Script started !")
-
-f = open('Github_Key.txt', 'r')
-
-#TODO Encrypt this key
-git = Github(f.readline())
-
 
 def job():
+    
+    conn = sqlite3.connect('../DB/web.db')
+    print("Script started !")
+
+    f = open('Github_Key.txt', 'r')
+
+    #TODO Encrypt this key
+    git = Github(f.readline())
+
     #Initialisation of various variables.
     Repos = []
     Repos_Names = []
@@ -58,12 +56,4 @@ def job():
             print('Repo ' + name + ' deleted')
 
     conn.commit()   
-    print("Done !")    
-    
-    
-#Do the function job every hour.
-schedule.every().minute.do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+    print("Done !") 
