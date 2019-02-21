@@ -10,11 +10,16 @@ import time
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 from DB_Updater import Update_Database
-    
+
+#Updates database on launch
+Update_Database()
+
+#Create background task to update database every hour after launch
 scheduler = BackgroundScheduler()
 scheduler.add_job(func=Update_Database, trigger="interval", hours=1)
 scheduler.start()
 
+#Shutdown background task on exit of app
 atexit.register(lambda: scheduler.shutdown())
 
 
@@ -52,4 +57,5 @@ def software():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
+    
     #app.run(debug=True)
