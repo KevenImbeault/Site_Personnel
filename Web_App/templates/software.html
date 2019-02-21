@@ -11,13 +11,14 @@
     {% extends "template.html" %}
     {% block content %}
     <div class="container" style="padding-top:5%">
-        <table id='dtBasicExample' class="table table-bordered">
+        <table id='dtBasicExample' class="table table-bordered Datatable_Marge">
             <thead class="thead-dark">
                <tr>
                   <th>Nom</th>
                   <th>Description</th>
                   <th>Forks</th>
                   <th>Stars</th>
+                  <th>Langages utilisés</th>
                </tr>
             </thead>
     
@@ -28,6 +29,7 @@
                      <td>{{ repo.DESCRIPTION }}</td>
                      <td>{{ repo.FORKS }}</td>
                      <td>{{ repo.STARS }}</td>
+                     <td>{{ repo.LANGUAGE }}</td>
                   </tr>
                {% endfor %}
             </tbody>
