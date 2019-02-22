@@ -1,23 +1,22 @@
-# Angular Personnal Website
+Site web personnel
 
-This is a version of my personnal website that divides more properly the Front-end and Back-end.
+Troisième version de mon site web personnel héberger à l’adresse suivante : https://kevenimbeault.ca/ Cette version utilise Python, Flask, SQLite et Docker pour fonctionner !
 
-## Project structure
-Everything in the /API folder is related to the API linking the front-end to the SQLite database. The only file present at the moment is the python script used to create the API (api.py). 
 
-Files in the /DB folder are related to the SQLite database. Currently the only files present are the database itself named 'web.db' and a python script used for updating it every hour (DB.py).
+Lancer le projet
 
-The /Web_Application folder is the Angular web application running the front end of the web site
+1.	Renommez le fichier « Github_Key_Public.txt » à « Github_Key.txt »
+2.	Installez Docker CE sur votre machine selon les instructions disponibles sur le site officiel de Docker : https://docs.docker.com/install/
+3.	Lancer la commande : docker build --tag=website
+4.	Lancer un conteneur avec l’image créer : docker run -p 4000:80 website
+5.	Si tous ce passe bien vous pouvez maintenant accédez au site web via http://localhost:4000
 
-## How to run (WIP)
+Explication des fichiers
 
-## Tech used (WIP)
-**Front-end**  
-Angular  
+Fichiers statiques
 
-**Back-end**  
-SQLite 3  
-Python  
+Tous les fichiers statiques utiliser par l’application 
 
-## Goal
-My goal with this website is to make me able to expand my website in the future without rewriting everything at once as well as provide a way to link multiple web applications that I create together.
+Templates
+
+Le dossier /templates 
