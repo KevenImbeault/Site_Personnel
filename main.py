@@ -62,5 +62,5 @@ def software():
     return render_template("software.html", repos = GITHUB.query.all(), page = 'Développement logiciel')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0')
     #app.run(debug=True)
