@@ -1,15 +1,15 @@
-# Site web personnel
-Troisième version de mon site web personnel héberger à l’adresse suivante : https://kevenimbeault.ca/ Cette version utilise Python, Flask, SQLite et Docker pour fonctionner !
+# Personal website
+Third version of my website, currently hosted on https://kevenimbeault.ca/. This version uses Python with various modules include Flask and SQL-Alchemy as well as SQLite.
 
-# Lancer le projet
+# Launch project
 WIP
 
-# Explication des fichiers
+# Files explanation
 
-## Fichiers statiques
-Tous les fichiers statiques utilisés par l’application se trouvent dans le dossier /static. Les stylesheets en css sont dans le chemin /static/css et les fichiers javascript sont dans /static/js.
+## Static files
+All static files that are used by the application can be found in the /static folder. CSS stylesheets are in /static/css while javascript files are in /static/js.
 
-*Template.css* – Stylesheeet pour l’application en entier. 
+*Template.css* – Stylesheet used for the entire application.
 
 *Script.js* – Script qui crée une DataTable dans la page Développement logiciel, permettant ainsi de faire des recherches, avoir plusieurs pages et quelques autres choses.
 
